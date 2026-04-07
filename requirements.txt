@@ -1,0 +1,31 @@
+# Auth0 AI SDKs
+auth0-ai-langchain        # Token Vault + CIBA wrappers for LangChain/LangGraph
+# Note: auth0-ai-langchain pulls in auth0-ai (base), auth0-python, openfga-sdk
+
+# LangChain + LangGraph
+langchain-google-genai<3   # ChatGoogleGenerativeAI (Gemini — default, pinned for auth0-ai-langchain compat)
+langchain-openai           # ChatOpenAI (GPT-4o — optional)
+# Optional LLM providers (install if using):
+# langchain-anthropic      # ChatAnthropic (Claude)
+# langchain-ollama         # ChatOllama (local Gemma 4, etc.)
+langgraph                  # StateGraph, ToolNode
+langgraph-checkpoint-sqlite<3  # SqliteSaver for persistent checkpoints
+aiosqlite                  # Async SQLite (required by langgraph-checkpoint-sqlite)
+
+# Web server
+aiohttp                    # HTTP server + StreamResponse for SSE
+aiohttp-session            # Server-side sessions (EncryptedCookieStorage)
+cryptography               # Required by aiohttp-session for Fernet encryption
+
+# HTTP clients
+httpx                      # Async HTTP for Auth0 token exchange, GitHub secret scanning API
+
+# GitHub API
+PyGithub                   # GitHub REST API client (synchronous — wrapped with asyncio.to_thread)
+
+# Google APIs
+google-api-python-client   # Gmail + Calendar API
+google-auth                # Google OAuth credentials from access token
+
+# Config
+python-dotenv              # .env file loading
